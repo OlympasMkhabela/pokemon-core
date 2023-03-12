@@ -18,12 +18,16 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
     required this.getPokemons,
     required this.getPokemonDetails,
   }) : super(Initial()) {
-    on<GetPokemonsEvent>(_onGetPokemons);
-    on<GetPokemonDetailsEvent>(_onGetPokemonDetails);
+    on<PokemonEvent>(mapEventToState);
+    on<FetchPokemons>(_onGetPokemons);
+    on<FetchPokemonDetails>(_onGetPokemonDetails);
   }
+    void mapEventToState(PokemonEvent event, Emitter<PokemonState> emit) async {
+      
+    }
 
   Future<void> _onGetPokemons(
-    GetPokemonsEvent event,
+    FetchPokemons event,
     Emitter<PokemonState> emit,
   ) async {
     emit(Loading());
@@ -37,7 +41,7 @@ class PokemonBloc extends Bloc<PokemonEvent, PokemonState> {
   }
 
   Future<void> _onGetPokemonDetails(
-    GetPokemonDetailsEvent event,
+    FetchPokemonDetails event,
     Emitter<PokemonState> emit,
   ) async {
     emit(Loading());

@@ -11,6 +11,8 @@ class Initial extends PokemonState {}
 
 class Loading extends PokemonState {}
 
+class FetchPokemon extends PokemonState {}
+
 class PokemonLoaded extends PokemonState {
   final Pokemon pokemon;
 

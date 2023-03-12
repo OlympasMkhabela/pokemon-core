@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import '../favorites/favorites_screen.dart';
-import '../home/home_screen.dart';
+import '../../features/pokemon/presentation/pages/favorites/favorites_screen.dart';
+import '../../features/pokemon/presentation/pages/home/home_screen.dart';
 
 import 'widgets/custom_menu_item.dart';
 
